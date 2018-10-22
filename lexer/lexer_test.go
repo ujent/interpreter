@@ -66,6 +66,8 @@ if (5 < 10) {
 
 10 == 10;
 10 != 9;
+7 >= 4;
+6 <= 6;
 `
 	tests := []struct{
 		expectedType token.TokenType
@@ -143,6 +145,14 @@ if (5 < 10) {
 		{token.INT, "10"},
 		{token.NOT_EQ, "!="},
 		{token.INT, "9"},
+		{token.SEMICOLON, ";"},
+		{token.INT, "7"},
+		{token.G_OR_EQ, ">="},
+		{token.INT, "4"},
+		{token.SEMICOLON, ";"},
+		{token.INT, "6"},
+		{token.L_OR_EQ, "<="},
+		{token.INT, "6"},
 		{token.SEMICOLON, ";"},
 		{token.EOF, ""},
 	}
